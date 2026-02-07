@@ -42,7 +42,7 @@ export function HomeGallery({ images }: HomeGalleryProps) {
           <button
             type="button"
             onClick={loadMore}
-            className="rounded-full border-2 border-accent bg-transparent px-8 py-3 font-semibold text-accent transition hover:bg-accent hover:text-white"
+            className="min-h-[48px] rounded-full border-2 border-accent bg-transparent px-8 py-3 font-semibold text-accent transition hover:bg-accent hover:text-white"
           >
             Load more
           </button>

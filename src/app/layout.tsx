@@ -1,8 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 const headingFont = Plus_Jakarta_Sans({
   variable: "--font-heading",
@@ -30,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="min-h-full">
       <body
-        className={`${headingFont.variable} ${bodyFont.variable} min-h-full antialiased font-sans`}
+        className={`${headingFont.variable} ${bodyFont.variable} min-h-full antialiased font-sans overflow-x-hidden`}
       >
         <Header />
         <main>{children}</main>

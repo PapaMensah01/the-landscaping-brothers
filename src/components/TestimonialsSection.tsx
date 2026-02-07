@@ -9,8 +9,8 @@ export function TestimonialsSection() {
   const t = TESTIMONIALS[index];
 
   return (
-    <section id="testimonials" className="relative border-b border-accent-dark bg-accent-dark py-16 md:py-20">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="testimonials" className="relative border-b border-accent-dark bg-accent-dark py-12 md:py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="font-heading text-3xl font-bold uppercase leading-tight tracking-tight text-white md:text-4xl lg:text-[2.5rem]">
           <span className="block">What our clients</span>
           <span className="block">say about us</span>

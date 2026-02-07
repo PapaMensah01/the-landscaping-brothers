@@ -64,7 +64,7 @@ export default function Home() {
             </p>
             <a
               href="/contact"
-              className="hero-line mt-8 inline-block w-fit rounded-lg bg-accent px-8 py-4 text-base font-bold uppercase tracking-wide text-white transition duration-300 hover:scale-[1.02] hover:bg-accent-dark hover:shadow-lg"
+              className="hero-line mt-8 inline-flex min-h-[48px] w-fit items-center justify-center rounded-lg bg-accent px-8 py-4 text-base font-bold uppercase tracking-wide text-white transition duration-300 hover:scale-[1.02] hover:bg-accent-dark hover:shadow-lg"
             >
               Contact Us
             </a>
@@ -253,8 +253,8 @@ export default function Home() {
       </AnimateIn>
 
       {/* Gallery - Our Latest Projects */}
-      <section id="gallery" className="border-b border-border bg-background py-16 md:py-20">
-        <div className="mx-auto max-w-6xl px-6">
+      <section id="gallery" className="border-b border-border bg-background py-12 md:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <AnimateIn className="text-center">
             <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Our Latest Project Triumphs
@@ -270,19 +270,20 @@ export default function Home() {
       <TestimonialsSection />
 
       {/* Contact CTA - Contact Us Today (inverted: light bg, dark text) */}
-      <section id="contact" className="border-b border-border bg-background py-16 md:py-20">
-        <AnimateIn className="mx-auto max-w-6xl px-6 text-center">
+      <section id="contact" className="border-b border-border bg-background py-12 md:py-20">
+        <AnimateIn className="mx-auto max-w-6xl px-4 text-center sm:px-6">
           <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             Contact Us Today
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-muted">
             Get your project started with The Landscaping Brothers. From design to execution, we’re here to transform your property from start to finish.
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="mailto:office@thelandscapingbrothers.com" className="rounded-full bg-accent px-8 py-4 text-base font-semibold text-white transition hover:bg-accent-dark">
-              office@thelandscapingbrothers.com
+          <div className="mt-8 flex w-full max-w-sm flex-col items-stretch gap-4 sm:max-w-none sm:flex-row sm:justify-center">
+            <a href="mailto:office@thelandscapingbrothers.com" className="flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-accent px-6 py-4 text-sm font-semibold text-white transition hover:bg-accent-dark sm:px-8 sm:text-base">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden className="shrink-0"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+              <span className="break-all text-center">office@thelandscapingbrothers.com</span>
             </a>
-            <a href="tel:+14706095370" className="rounded-full border-2 border-accent bg-transparent px-8 py-4 text-base font-semibold text-accent transition hover:bg-accent/10">
+            <a href="tel:+14706095370" className="flex min-h-[48px] items-center justify-center rounded-full border-2 border-accent bg-transparent px-6 py-4 text-sm font-semibold text-accent transition hover:bg-accent/10 sm:px-8 sm:text-base">
               (470) 609-5370
             </a>
           </div>
