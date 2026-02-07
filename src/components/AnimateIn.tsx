@@ -2,16 +2,18 @@
 
 import React, { useEffect, useRef, useState, type ReactNode } from "react";
 
+type HtmlTag = "div" | "section" | "article" | "aside" | "header" | "footer" | "main" | "nav";
+
 type AnimateInProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
   stagger?: number;
-  as?: keyof JSX.IntrinsicElements;
+  as?: HtmlTag;
 };
 
 export function AnimateIn({ children, className = "", delay = 0, stagger = 0, as: Tag = "div" }: AnimateInProps) {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export function AnimateIn({ children, className = "", delay = 0, stagger = 0, as
 
   return (
     <Tag
-      ref={ref as React.RefObject<HTMLDivElement>}
+      ref={ref}
       className={`animate-in-place ${visible ? "animate-in-visible" : ""} ${className}`}
     >
       {children}
