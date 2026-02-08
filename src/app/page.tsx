@@ -1,5 +1,10 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimateIn, AnimateInStagger } from "@/components/AnimateIn";
+import { SERVICES } from "./services/services-data";
 import { HomeGallery } from "@/components/HomeGallery";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { GALLERY_IMAGES } from "./gallery-images";
@@ -43,6 +48,8 @@ function ImagePlaceholder({ className = "" }: { className?: string }) {
 }
 
 export default function Home() {
+  const [openBanner, setOpenBanner] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero - background image, left-aligned headline, bottom-right brand */}
@@ -126,7 +133,7 @@ export default function Home() {
                 ))}
               </ul>
               <a
-                href="/contact"
+                href="/about"
                 className="mt-8 inline-block rounded-lg bg-accent px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition duration-300 hover:scale-[1.02] hover:bg-accent-dark hover:shadow-md"
               >
                 More About Us
@@ -149,10 +156,28 @@ export default function Home() {
         </AnimateIn>
       </section>
 
-      {/* Two stacked image banners with overlay and centered text + hover text block */}
+      {/* Two stacked image banners with overlay and centered text + hover/tap to reveal description */}
       <section className="border-b border-border">
         {BANNER_IMAGES.map((banner) => (
-          <AnimateIn key={banner.title} as="div" className="group relative flex h-[55vh] w-full cursor-default items-center justify-center overflow-hidden md:h-[60vh]">
+          <AnimateIn
+            key={banner.title}
+            as="div"
+            className="group relative flex h-[55vh] w-full cursor-pointer items-center justify-center overflow-hidden md:cursor-default md:h-[60vh]"
+          >
+            <div
+              className="absolute inset-0 z-20 md:pointer-events-none"
+              role="button"
+              tabIndex={0}
+              onClick={() => setOpenBanner((prev) => (prev === banner.title ? null : banner.title))}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setOpenBanner((prev) => (prev === banner.title ? null : banner.title));
+                }
+              }}
+              aria-expanded={openBanner === banner.title}
+              aria-label={`${banner.title}. Tap to ${openBanner === banner.title ? "collapse" : "read"} description`}
+            />
             {"src" in banner && banner.src ? (
               <div
                 className="absolute transition duration-300 group-hover:scale-105"
@@ -172,11 +197,16 @@ export default function Home() {
               <ImagePlaceholder className="absolute inset-0 transition duration-300 group-hover:scale-105" />
             )}
             <div className="absolute inset-0 bg-foreground/55 transition duration-300 group-hover:bg-foreground/65" />
-            <div className="relative z-10 flex max-w-2xl flex-col items-center px-6 text-center">
+            <div className="relative z-10 flex max-w-2xl flex-col items-center px-6 text-center pointer-events-none">
               <h2 className="font-heading text-3xl font-bold uppercase tracking-tight text-white md:text-4xl lg:text-5xl">
                 {banner.title}
               </h2>
-              <div className="mt-4 translate-y-2 opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              {/* Mobile: tap to reveal (state). Desktop: hover to reveal (group-hover). */}
+              <div
+                className={`mt-4 transition duration-300 md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 ${
+                  openBanner === banner.title ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+                }`}
+              >
                 <p className="text-white/95 text-sm leading-relaxed md:text-base">
                   {banner.description}
                 </p>
@@ -198,23 +228,16 @@ export default function Home() {
             </p>
           </AnimateIn>
           <AnimateInStagger className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" stagger={100}>
-            {[
-              { title: "Landscape Design & Planning", description: "Tailored landscape designs, seasonal cleanups, sod installation, and comprehensive planning for your vision." },
-              { title: "Lawn Care & Sod", description: "Expert sod installation and lawn maintenance for vibrant, healthy lawns that elevate your property." },
-              { title: "Ground Cover & Mulch", description: "High-quality mulch, pine straw, and ground cover to finish and protect your landscape." },
-              { title: "Grading & Drainage", description: "Drainage solutions and grading so your property stays dry and your investment is protected." },
-              { title: "Hardscaping", description: "Patios, retaining walls, fire pits, outdoor kitchens, walkways, and stairs—built to last." },
-              { title: "Commercial Maintenance", description: "Professional upkeep and design for businesses, HOAs, and commercial properties." },
-            ].map((service) => (
+            {SERVICES.map((service) => (
               <div
-                key={service.title}
+                key={service.slug}
                 className="flex flex-col rounded-2xl border border-border bg-background p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:shadow-lg"
               >
                 <h3 className="font-heading text-lg font-semibold text-foreground">{service.title}</h3>
                 <p className="mt-2 flex-1 text-sm text-muted">{service.description}</p>
-                <a href="/contact" className="mt-4 text-sm font-semibold text-accent transition duration-200 hover:text-accent-dark">
+                <Link href={`/services/${service.slug}`} className="mt-4 text-sm font-semibold text-accent transition duration-200 hover:text-accent-dark">
                   Learn More →
-                </a>
+                </Link>
               </div>
             ))}
           </AnimateInStagger>
@@ -235,9 +258,9 @@ export default function Home() {
         {/* Right ~60%: solid accent bg, large letters T L B, three content blocks */}
         <div className="flex w-full flex-col justify-center bg-accent px-8 py-12 md:w-[60%] md:max-w-[60%] md:px-12 md:py-16">
           {[
-            { letter: "T", title: "Trust", body: "At The Landscaping Brothers, exceptional service is the root of everything we do. From the first site visit to the final cleanup, we provide clear communication, dependable timelines, and a client-focused experience that makes transforming your outdoor space straightforward and stress-free." },
-            { letter: "L", title: "Lasting", body: "Hardscaping and landscaping demand careful craftsmanship—and that's exactly what we deliver. Every cut, placement, grade, and plant selection is executed with exacting precision to ensure long-lasting durability, seamless design flow, and a finished result that enhances the beauty and value of your property." },
-            { letter: "B", title: "Standards", body: "We hold ourselves to the highest standards in the industry. Quality materials, expert installation, and uncompromising professionalism are the backbone of every project. Our goal is simple: create outdoor spaces that stand the test of time and exceed your expectations, every time." },
+            { letter: "T", title: "Trust", body: "At The Landscaping Brothers, trust is the foundation of everything we do. From transparent pricing to clear communication and reliable service, we focus on building strong relationships and earning our clients' confidence on every project." },
+            { letter: "L", title: "Lasting", body: "We create landscapes with lasting quality in mind. Through skilled craftsmanship, attention to detail, and the use of quality materials, our work is designed to stand the test of time and add long-term value to your property." },
+            { letter: "B", title: "Brotherhood", body: "Brotherhood represents both who we are and how we operate. As a family-owned business, we treat our clients like family—working with integrity, respect, and a shared commitment to excellence in everything we do." },
           ].map((item) => (
             <div key={item.letter} className="flex gap-6 border-b border-white/20 py-6 first:pt-0 last:border-b-0 last:pb-0">
               <span className="font-heading text-6xl font-extrabold leading-none text-white md:text-7xl lg:text-8xl" aria-hidden>
@@ -281,7 +304,7 @@ export default function Home() {
           <div className="mt-8 flex w-full max-w-sm flex-col items-stretch gap-4 sm:max-w-none sm:flex-row sm:justify-center">
             <a href="mailto:office@thelandscapingbrothers.com" className="flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-accent px-6 py-4 text-sm font-semibold text-white transition hover:bg-accent-dark sm:px-8 sm:text-base">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden className="shrink-0"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
-              <span className="break-all text-center">office@thelandscapingbrothers.com</span>
+              <span className="whitespace-nowrap">office@thelandscapingbrothers.com</span>
             </a>
             <a href="tel:+14706095370" className="flex min-h-[48px] items-center justify-center rounded-full border-2 border-accent bg-transparent px-6 py-4 text-sm font-semibold text-accent transition hover:bg-accent/10 sm:px-8 sm:text-base">
               (470) 609-5370

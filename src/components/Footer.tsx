@@ -1,16 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
+import { LOGO_PATH } from "@/app/site";
+import { SERVICES } from "@/app/services/services-data";
 
 export function Footer() {
   return (
     <footer className="bg-foreground text-white">
       <div className="mx-auto max-w-6xl px-6 pt-12 pb-8">
-        {/* Logo / brand centered at top */}
+        {/* Logo / brand centered at top - blend so logo black matches footer background */}
         <div className="mb-12 flex justify-center">
-          <Link href="/" className="flex flex-col items-center">
-            <span className="font-heading text-3xl font-bold uppercase tracking-tight text-white md:text-4xl">
-              The Landscaping Brothers
-            </span>
-            <span className="mt-1 inline-block rounded bg-accent px-3 py-0.5 text-xs font-semibold uppercase tracking-wider text-white">
+          <Link href="/" className="flex flex-col items-center bg-foreground" aria-label="The Landscaping Brothers - Home">
+            <Image src={LOGO_PATH} alt="" width={440} height={88} className="h-20 w-auto object-contain md:h-28 mix-blend-lighten" unoptimized />
+            <span className="mt-2 inline-block rounded bg-accent px-3 py-0.5 text-xs font-semibold uppercase tracking-wider text-white">
               Landscaping &amp; Hardscapes
             </span>
           </Link>
@@ -34,12 +35,9 @@ export function Footer() {
           <div>
             <h3 className="font-heading font-semibold text-white">Our Team at The Landscaping Brothers</h3>
             <ul className="mt-3 space-y-1 text-sm text-white/70">
-              <li><Link href="/#services" className="block py-2.5 transition duration-200 hover:text-white">Landscaping ▾</Link></li>
-              <li><Link href="/#services" className="block py-2.5 transition duration-200 hover:text-white">Hardscape ▾</Link></li>
-              <li><Link href="/#services" className="block py-2.5 transition duration-200 hover:text-white">Grading &amp; Drainage</Link></li>
-              <li><Link href="/#services" className="block py-2.5 transition duration-200 hover:text-white">Sod Installation</Link></li>
-              <li><Link href="/#services" className="block py-2.5 transition duration-200 hover:text-white">Ground Cover</Link></li>
-              <li><Link href="/#services" className="block py-2.5 transition duration-200 hover:text-white">Concrete ▾</Link></li>
+              {SERVICES.map((service) => (
+                <li key={service.slug}><Link href={`/services/${service.slug}`} className="block py-2.5 transition duration-200 hover:text-white">{service.title}</Link></li>
+              ))}
             </ul>
           </div>
 
@@ -68,14 +66,24 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:office@thelandscapingbrothers.com" className="flex items-center gap-2 py-2.5 transition duration-200 hover:text-white break-all">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
-                  office@thelandscapingbrothers.com
+                <a href="mailto:office@thelandscapingbrothers.com" className="flex items-center gap-2 py-2.5 transition duration-200 hover:text-white whitespace-nowrap">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden className="h-4 w-4 shrink-0"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></svg>
+                  <span className="text-xs">office@thelandscapingbrothers.com</span>
                 </a>
               </li>
               <li className="flex items-center gap-2 py-2.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></svg>
                 Peachtree Corners, GA
+              </li>
+              <li>
+                <a href="https://www.instagram.com/thelandscapingbrothersatl/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-2.5 transition duration-200 hover:text-white" aria-label="Follow us on Instagram">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                  </svg>
+                  @thelandscapingbrothersatl
+                </a>
               </li>
             </ul>
           </div>

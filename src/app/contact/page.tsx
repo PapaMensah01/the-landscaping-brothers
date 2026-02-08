@@ -25,7 +25,7 @@ export default function ContactPage() {
               <a href="tel:+14706095370" className="text-accent transition hover:text-accent-dark">(470) 609-5370</a>
             </li>
             <li>
-              <a href="mailto:office@thelandscapingbrothers.com" className="text-accent transition hover:text-accent-dark">office@thelandscapingbrothers.com</a>
+              <a href="mailto:office@thelandscapingbrothers.com" className="whitespace-nowrap text-accent transition hover:text-accent-dark">office@thelandscapingbrothers.com</a>
             </li>
           </ul>
         </div>
