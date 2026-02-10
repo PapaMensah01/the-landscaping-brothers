@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   title: "The Landscaping Brothers | Professional Landscaping & Lawn Care",
   description:
     "Transform your outdoor space with The Landscaping Brothers. Lawn care, design, hardscaping, and maintenance for residential and commercial properties.",
+  icons: {
+    icon: "/gallery/landscaping-bros-mountain-white.png",
+    apple: "/gallery/landscaping-bros-mountain-white.png",
+  },
 };
 
 export default function RootLayout({

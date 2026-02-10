@@ -87,22 +87,22 @@ export default function AboutPage() {
             </h2>
             <div className="mt-3 h-0.5 w-14 rounded-full bg-white" aria-hidden />
             <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/90 sm:mt-6 sm:text-base">
-              We specialize in custom landscaping and hardscapes for residential
-              and commercial clients. Our team is committed to excellence and
-              making your property look its best.
+              From design to build, we handle landscaping and hardscaping for
+              homes and businesses. We aim for top-quality results and a
+              property you&apos;re proud of.
             </p>
             <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-white/95 sm:mt-6 sm:space-y-3 sm:text-base">
               <li className="flex gap-3">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-white" aria-hidden />
-                Quality work with precision and professionalism.
+                Every job done with care and a professional standard.
               </li>
               <li className="flex gap-3">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-white" aria-hidden />
-                Tailored designs and complete landscaping solutions.
+                Design and installation in one place—no juggling multiple contractors.
               </li>
               <li className="flex gap-3">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-white" aria-hidden />
-                Strong reputation backed by 5-star client reviews.
+                Trusted by homeowners and businesses, with top ratings from our clients.
               </li>
             </ul>
             <Link

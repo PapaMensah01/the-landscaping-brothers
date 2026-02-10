@@ -13,7 +13,7 @@ const GROUND_COVER_OPTIONS = [
   { label: "Red", image: "/gallery/IMG_3049.jpeg" },
   { label: "Cypress", image: "/gallery/IMG_3050.jpeg" },
   { label: "Playground", image: "/gallery/IMG_3051.jpeg" },
-  { label: "Pinestraw: Farm Fresh Long Needle", image: "/gallery/IMG_3052.jpeg" },
+  { label: "Premium Long Needle Mulch", image: "/gallery/IMG_3052.jpeg" },
   { label: "Wheat Straw", image: "/gallery/IMG_3053.jpeg" },
 ] as const;
 

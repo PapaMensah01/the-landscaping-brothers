@@ -118,9 +118,9 @@ export default function Home() {
               </p>
               <ul className="mt-6 space-y-4">
                 {[
-                  "Quality work with precision and professionalism.",
-                  "Tailored designs and complete landscaping solutions.",
-                  "Strong reputation backed by 5-star client reviews.",
+                  "Expert execution and a professional standard on every project.",
+                  "Custom plans and full-service design and installation.",
+                  "A track record of 5-star reviews and satisfied clients.",
                 ].map((text) => (
                   <li key={text} className="flex items-start gap-3">
                     <svg className="mt-0.5 h-6 w-6 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
@@ -151,7 +151,7 @@ export default function Home() {
             <span className="block">and Design</span>
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed" style={{ color: "#666666" }}>
-            We handle all preconstruction planning—from site assessments to scheduling and permits—so your project starts smoothly. Our team also provides customized landscape design, including planning, seasonal cleanups, sod installation, and more.             We&apos;re your area&apos;s all-in-one landscaping design and installation company.
+            We take care of everything before construction—site assessments, scheduling, and permits—so your project gets off to a smooth start. We also offer custom landscape design, planning, seasonal cleanups, sod installation, and other services. You get design and installation from one team in your area.
           </p>
         </AnimateIn>
       </section>
