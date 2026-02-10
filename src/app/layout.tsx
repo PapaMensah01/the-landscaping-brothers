@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
+// Ensures all gallery assets are part of the build dependency graph for deploy
+import "./gallery-assets";
 
 export const viewport: Viewport = {
   width: "device-width",
