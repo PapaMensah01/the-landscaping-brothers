@@ -13,7 +13,7 @@ const GROUND_COVER_OPTIONS = [
   { label: "Red", image: "/gallery/IMG_3049.jpeg" },
   { label: "Cypress", image: "/gallery/IMG_3050.jpeg" },
   { label: "Playground", image: "/gallery/IMG_3051.jpeg" },
-  { label: "Premium Long Needle Mulch", image: "/gallery/IMG_3052.jpeg" },
+  { label: "Premium Long Needle Pinestraw", image: "/gallery/IMG_3052.jpeg" },
   { label: "Wheat Straw", image: "/gallery/IMG_3053.jpeg" },
 ] as const;
 
@@ -66,11 +66,11 @@ export default function PinestrawMulchPage() {
           <div className="min-w-0">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
               <Image
-                src="/gallery/IMG_2273.jpeg"
+                src="/gallery/IMG_2878.jpg"
                 alt="Pinestraw and mulch installation by The Landscaping Brothers"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 2880px"
               />
             </div>
           </div>
@@ -91,11 +91,11 @@ export default function PinestrawMulchPage() {
             for your ground cover needs, so you can match both your site
             conditions and the look you want.
           </p>
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:mt-12 sm:gap-6 md:gap-8 md:grid-cols-4">
-            {GROUND_COVER_OPTIONS.slice(0, 4).map((item) => (
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:mt-12 sm:gap-6 md:grid-cols-8 md:gap-8">
+            {GROUND_COVER_OPTIONS.map((item, i) => (
               <div
                 key={item.label}
-                className="overflow-hidden rounded-lg border-2 border-accent bg-white"
+                className={`overflow-hidden rounded-lg border-2 border-accent bg-white md:col-span-2 ${i === 4 ? "md:col-start-2" : i === 5 ? "md:col-start-4" : i === 6 ? "md:col-start-6" : ""}`}
               >
                 <div className="relative aspect-[4/3] w-full">
                   <Image
@@ -104,29 +104,6 @@ export default function PinestrawMulchPage() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, 25vw"
-                  />
-                </div>
-                <div className="border-t-2 border-accent px-3 py-2.5 sm:px-4 sm:py-3">
-                  <p className="font-heading text-center text-xs font-bold uppercase leading-tight tracking-tight text-foreground break-words sm:text-sm">
-                    {item.label}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-4 grid grid-cols-1 gap-4 sm:mt-6 sm:gap-6 md:mt-8 md:grid-cols-3 md:gap-8">
-            {GROUND_COVER_OPTIONS.slice(4, 7).map((item) => (
-              <div
-                key={item.label}
-                className="overflow-hidden rounded-lg border-2 border-accent bg-white"
-              >
-                <div className="relative aspect-[4/3] w-full">
-                  <Image
-                    src={item.image}
-                    alt={item.label}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
                   />
                 </div>
                 <div className="border-t-2 border-accent px-3 py-2.5 sm:px-4 sm:py-3">

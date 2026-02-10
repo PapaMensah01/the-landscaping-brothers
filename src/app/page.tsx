@@ -283,7 +283,7 @@ export default function Home() {
               Our Latest Project Triumphs
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-muted">
-              From patios and sod to full yard transformations—see what we’ve been up to.
+              From pinestraw, mulch, and new sod to complete yard makeovers—browse our recent projects.
             </p>
           </AnimateIn>
           <HomeGallery images={GALLERY_IMAGES} />

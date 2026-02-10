@@ -3,7 +3,7 @@ import { GALLERY_IMAGES } from "../gallery-images";
 
 export const metadata = {
   title: "Project Highlights | The Landscaping Brothers",
-  description: "Browse our latest landscaping and hardscaping projects—patios, sod, full yard transformations and more.",
+  description: "Browse our latest landscaping and hardscaping projects—pinestraw, mulch, new sod, complete yard makeovers and more.",
 };
 
 export default function ProjectHighlightsPage() {
@@ -14,7 +14,7 @@ export default function ProjectHighlightsPage() {
           Our Latest Project Triumphs
         </h1>
         <p className="mx-auto mt-2 max-w-xl text-muted">
-          From patios and sod to full yard transformations—see what we’ve been up to.
+          From pinestraw, mulch, and new sod to complete yard makeovers—browse our recent projects.
         </p>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

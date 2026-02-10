@@ -125,7 +125,7 @@ export function CareersForm() {
 
       <div className="rounded-xl border border-border bg-background p-4">
         <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted">
-          Upload file {requiredStar}
+          Upload resume {requiredStar}
         </p>
         <input
           ref={fileInputRef}
@@ -152,7 +152,7 @@ export function CareersForm() {
               type="button"
               onClick={() => setFile(null)}
               className="shrink-0 rounded p-1 text-red-500 transition hover:bg-red-50 hover:text-red-600"
-              aria-label="Remove file"
+              aria-label="Remove resume"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M18 6 6 18" />
@@ -171,7 +171,7 @@ export function CareersForm() {
           }`}
         >
           <p className="text-sm font-medium uppercase tracking-wide text-foreground">
-            Drag file here
+            Drag resume here
           </p>
           <p className="mt-1 text-sm">
             <span className="text-muted">or </span>
