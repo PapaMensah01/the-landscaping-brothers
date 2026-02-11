@@ -66,7 +66,7 @@ export default function PinestrawMulchPage() {
           <div className="min-w-0">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg">
               <Image
-                src="/gallery/IMG_2878.jpg"
+                src="/gallery/IMG_2878.JPG"
                 alt="Pinestraw and mulch installation by The Landscaping Brothers"
                 fill
                 className="object-cover"
