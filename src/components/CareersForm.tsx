@@ -12,7 +12,7 @@ const HOW_DID_YOU_HEAR_OPTIONS = [
 ];
 
 const inputClassName =
-  "mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent";
+  "mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent";
 const labelClassName = "block text-sm font-medium text-foreground";
 const requiredStar = <span className="text-red-500">*</span>;
 
@@ -64,7 +64,7 @@ export function CareersForm() {
       action="#"
       method="post"
       encType="multipart/form-data"
-      className="mt-10 space-y-6 rounded-2xl border border-border bg-cream/30 p-6 md:p-8"
+      className="mt-10 space-y-6 rounded-2xl border border-border bg-cream/30 p-4 sm:p-6 md:p-8"
     >
       <div className="grid gap-6 sm:grid-cols-2">
         <div>

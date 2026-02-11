@@ -26,6 +26,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -34,6 +35,8 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+
+/* Mobile: reduce tap highlight for cleaner touch feedback */
 
 body {
   background: var(--background);

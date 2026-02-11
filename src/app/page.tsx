@@ -58,7 +58,7 @@ export default function Home() {
           <Image src={HERO_IMAGE} alt="" fill className="object-cover object-[center_35%]" priority sizes="100vw" quality={95} />
           <div className="absolute inset-0 bg-foreground/55" />
         </div>
-        <div className="relative mx-auto flex min-h-[60vh] max-w-6xl flex-col px-6 md:min-h-[65vh]">
+        <div className="relative mx-auto flex min-h-[60vh] max-w-6xl flex-col px-4 sm:px-6 md:min-h-[65vh]">
           {/* Left: stacked headline + subtitle + CTA */}
           <div className="flex flex-1 flex-col justify-center text-left">
             <h1 className="font-heading text-4xl font-extrabold uppercase tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
@@ -80,8 +80,8 @@ export default function Home() {
       </section>
 
       {/* Intro - Complete Landscaping Services (image left, text right, success badge) */}
-      <section id="about" className="border-b border-border py-16 md:py-20" style={{ backgroundColor: "#f7f7f7" }}>
-        <div className="mx-auto max-w-6xl px-6">
+      <section id="about" className="border-b border-border py-12 px-4 sm:px-6 md:py-20" style={{ backgroundColor: "#f7f7f7" }}>
+        <div className="mx-auto max-w-6xl">
           <AnimateIn className="grid gap-12 lg:grid-cols-2 lg:items-center">
             {/* Left: single image with black border (top/left), shadow, and success-rate badge */}
             <div className="relative order-2 lg:order-1">
@@ -144,8 +144,8 @@ export default function Home() {
       </section>
 
       {/* Customized Landscape Planning and Design - centered intro */}
-      <section className="border-b border-border py-16 md:py-20" style={{ backgroundColor: "#f5f5f5" }}>
-        <AnimateIn className="mx-auto max-w-6xl px-6 text-center">
+      <section className="border-b border-border py-12 px-4 sm:px-6 md:py-20" style={{ backgroundColor: "#f5f5f5" }}>
+        <AnimateIn className="mx-auto max-w-6xl text-center">
           <h2 className="font-heading text-3xl font-bold uppercase tracking-tight md:text-4xl lg:text-5xl" style={{ color: "#333333" }}>
             <span className="block">Customized Landscape Planning</span>
             <span className="block">and Design</span>
@@ -197,7 +197,7 @@ export default function Home() {
               <ImagePlaceholder className="absolute inset-0 transition duration-300 group-hover:scale-105" />
             )}
             <div className="absolute inset-0 bg-foreground/55 transition duration-300 group-hover:bg-foreground/65" />
-            <div className="relative z-10 flex max-w-2xl flex-col items-center px-6 text-center pointer-events-none">
+            <div className="relative z-10 flex max-w-2xl flex-col items-center px-4 text-center pointer-events-none sm:px-6">
               <h2 className="font-heading text-3xl font-bold uppercase tracking-tight text-white md:text-4xl lg:text-5xl">
                 {banner.title}
               </h2>
@@ -217,8 +217,8 @@ export default function Home() {
       </section>
 
       {/* Our Services - card grid with Learn More */}
-      <section id="services" className="border-b border-border bg-cream/40 py-16 md:py-20">
-        <div className="mx-auto max-w-6xl px-6">
+      <section id="services" className="border-b border-border bg-cream/40 py-12 px-4 sm:px-6 md:py-20">
+        <div className="mx-auto max-w-6xl">
           <AnimateIn className="text-center">
             <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl">
               Our Services
@@ -235,7 +235,7 @@ export default function Home() {
               >
                 <h3 className="font-heading text-lg font-semibold text-foreground">{service.title}</h3>
                 <p className="mt-2 flex-1 text-sm text-muted">{service.description}</p>
-                <Link href={`/services/${service.slug}`} className="mt-4 text-sm font-semibold text-accent transition duration-200 hover:text-accent-dark">
+                <Link href={`/services/${service.slug}`} className="mt-4 flex min-h-[44px] w-fit items-center text-sm font-semibold text-accent transition duration-200 hover:text-accent-dark">
                   Learn More →
                 </Link>
               </div>
@@ -250,13 +250,13 @@ export default function Home() {
         <div className="relative flex min-h-[280px] w-full flex-1 basis-0 items-center justify-center overflow-hidden bg-foreground md:min-h-0 md:w-[40%] md:max-w-[40%]">
           <Image src="/gallery/IMG_2839.PNG" alt="" fill className="object-cover object-[center_35%]" sizes="50vw" />
           <div className="absolute inset-0 bg-foreground/70" />
-          <h2 className="relative z-10 px-6 text-center font-heading text-2xl font-bold uppercase leading-tight tracking-tight text-white md:text-3xl lg:text-4xl">
+          <h2 className="relative z-10 px-4 text-center font-heading text-2xl font-bold uppercase leading-tight tracking-tight text-white sm:px-6 md:text-3xl lg:text-4xl">
             <span className="block">The Landscaping Brothers</span>
             <span className="block">Standard</span>
           </h2>
         </div>
         {/* Right ~60%: solid accent bg, large letters T L B, three content blocks */}
-        <div className="flex w-full flex-col justify-center bg-accent px-8 py-12 md:w-[60%] md:max-w-[60%] md:px-12 md:py-16">
+        <div className="flex w-full flex-col justify-center bg-accent px-4 py-10 sm:px-6 sm:py-12 md:w-[60%] md:max-w-[60%] md:px-12 md:py-16">
           {[
             { letter: "T", title: "Trust", body: "At The Landscaping Brothers, trust is the foundation of everything we do. From transparent pricing to clear communication and reliable service, we focus on building strong relationships and earning our clients' confidence on every project." },
             { letter: "L", title: "Lasting", body: "We create landscapes with lasting quality in mind. Through skilled craftsmanship, attention to detail, and the use of quality materials, our work is designed to stand the test of time and add long-term value to your property." },
@@ -310,7 +310,7 @@ export default function Home() {
               (470) 609-5370
             </a>
           </div>
-          <a href="/contact" className="mt-6 inline-block text-sm font-semibold text-accent underline decoration-2 underline-offset-2 transition hover:text-accent-dark hover:no-underline">
+          <a href="/contact" className="mt-6 inline-flex min-h-[44px] items-center text-sm font-semibold text-accent underline decoration-2 underline-offset-2 transition hover:text-accent-dark hover:no-underline">
             Contact Us Today!
           </a>
         </AnimateIn>

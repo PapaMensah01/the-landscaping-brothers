@@ -8,8 +8,8 @@ export const metadata = {
 
 export default function ProjectHighlightsPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+    <div className="min-h-screen bg-background overflow-x-hidden">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 md:py-20">
         <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground md:text-4xl">
           Our Latest Project Triumphs
         </h1>

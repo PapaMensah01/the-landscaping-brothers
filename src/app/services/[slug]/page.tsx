@@ -24,11 +24,11 @@ export default async function ServicePage({ params }: Props) {
   if (!service) notFound();
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-2xl px-6 py-16 md:py-20">
+    <div className="min-h-screen bg-background overflow-x-hidden">
+      <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 sm:py-16 md:py-20">
         <Link
           href="/#services"
-          className="text-sm font-medium text-accent transition hover:text-accent-dark"
+          className="inline-flex min-h-[44px] items-center text-sm font-medium text-accent transition hover:text-accent-dark"
         >
           ← All Services
         </Link>
@@ -43,7 +43,7 @@ export default async function ServicePage({ params }: Props) {
         </p>
         <Link
           href="/contact"
-          className="mt-8 inline-block rounded-lg bg-accent px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-accent-dark"
+          className="mt-8 inline-flex min-h-[44px] items-center justify-center rounded-lg bg-accent px-8 py-4 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-accent-dark"
         >
           Get a Free Quote
         </Link>

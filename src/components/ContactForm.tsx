@@ -19,7 +19,7 @@ export function ContactForm() {
     <form
       action="#"
       method="post"
-      className="mt-10 space-y-6 rounded-2xl border border-border bg-cream/30 p-6 md:p-8"
+      className="mt-10 space-y-6 rounded-2xl border border-border bg-cream/30 p-4 sm:p-6 md:p-8"
     >
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
@@ -31,7 +31,7 @@ export function ContactForm() {
             id="firstName"
             name="firstName"
             required
-            className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
             placeholder="First name"
           />
         </div>
@@ -44,7 +44,7 @@ export function ContactForm() {
             id="lastName"
             name="lastName"
             required
-            className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
             placeholder="Last name"
           />
         </div>
@@ -58,7 +58,7 @@ export function ContactForm() {
           id="email"
           name="email"
           required
-          className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
           placeholder="you@example.com"
         />
       </div>
@@ -71,7 +71,7 @@ export function ContactForm() {
           id="phone"
           name="phone"
           required
-          className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
           placeholder="(470) 609-5370"
         />
       </div>
@@ -84,7 +84,7 @@ export function ContactForm() {
           id="streetAddress"
           name="streetAddress"
           required
-          className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
           placeholder="Street address"
         />
       </div>
@@ -98,7 +98,7 @@ export function ContactForm() {
             id="city"
             name="city"
             required
-            className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
             placeholder="City"
           />
         </div>
@@ -111,7 +111,7 @@ export function ContactForm() {
             id="state"
             name="state"
             required
-            className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+            className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
             placeholder="State"
           />
         </div>
@@ -127,7 +127,7 @@ export function ContactForm() {
           required
           inputMode="numeric"
           autoComplete="postal-code"
-          className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          className="mt-1.5 w-full rounded-lg border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
           placeholder="ZIP code"
         />
       </div>
@@ -140,7 +140,7 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
-          className="mt-1.5 w-full resize-y rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+          className="mt-1.5 w-full resize-y rounded-lg border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
           placeholder="Please provide as much detail as you can."
         />
       </div>
@@ -175,7 +175,7 @@ export function ContactForm() {
               type="text"
               id="referralOther"
               name="referralOther"
-              className="w-full rounded-lg border border-border bg-background px-4 py-3 text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+              className="w-full rounded-lg border border-border bg-background px-4 py-3 text-base text-foreground placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
               placeholder="Please specify how you heard about us"
             />
           </div>

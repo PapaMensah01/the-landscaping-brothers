@@ -107,7 +107,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen((o) => !o)}
-              className="flex h-11 w-11 items-center justify-center rounded-lg border border-border text-foreground transition hover:bg-cream md:hidden"
+              className="flex h-11 min-h-[44px] w-11 min-w-[44px] items-center justify-center rounded-lg border border-border text-foreground transition hover:bg-cream active:bg-cream md:hidden"
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
@@ -133,26 +133,26 @@ export function Header() {
           aria-hidden={!mobileMenuOpen}
         >
           <div className="border-t border-border bg-background px-4 py-4 shadow-lg">
-            <ul className="flex flex-col gap-1">
+            <ul className="flex flex-col gap-0">
               <li>
-                <span className="block px-3 py-2 text-xs font-semibold uppercase tracking-wider text-muted">About</span>
-                <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-3 text-foreground transition hover:bg-cream">About Us</Link>
-                <Link href="/testimonials" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-3 text-foreground transition hover:bg-cream">Testimonials</Link>
+                <span className="block px-3 pt-2 pb-1 text-xs font-semibold uppercase tracking-wider text-muted">About</span>
+                <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="flex min-h-[44px] items-center rounded-lg px-3 py-3 text-foreground transition hover:bg-cream active:bg-cream">About Us</Link>
+                <Link href="/testimonials" onClick={() => setMobileMenuOpen(false)} className="flex min-h-[44px] items-center rounded-lg px-3 py-3 text-foreground transition hover:bg-cream active:bg-cream">Testimonials</Link>
               </li>
               <li>
-                <span className="block px-3 py-2 text-xs font-semibold uppercase tracking-wider text-muted">Services</span>
+                <span className="block px-3 pt-3 pb-1 text-xs font-semibold uppercase tracking-wider text-muted">Services</span>
                 {SERVICES.map((service) => (
-                  <Link key={service.slug} href={`/services/${service.slug}`} onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-3 text-foreground transition hover:bg-cream">{service.title}</Link>
+                  <Link key={service.slug} href={`/services/${service.slug}`} onClick={() => setMobileMenuOpen(false)} className="flex min-h-[44px] items-center rounded-lg px-3 py-3 text-foreground transition hover:bg-cream active:bg-cream">{service.title}</Link>
                 ))}
               </li>
               <li>
-                <Link href="/project-highlights" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-3 text-foreground transition hover:bg-cream min-h-[44px] flex items-center">Gallery</Link>
+                <Link href="/project-highlights" onClick={() => setMobileMenuOpen(false)} className="flex min-h-[44px] items-center rounded-lg px-3 py-3 text-foreground transition hover:bg-cream active:bg-cream">Gallery</Link>
               </li>
               <li>
-                <Link href="/careers" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-3 text-foreground transition hover:bg-cream min-h-[44px] flex items-center">Careers</Link>
+                <Link href="/careers" onClick={() => setMobileMenuOpen(false)} className="flex min-h-[44px] items-center rounded-lg px-3 py-3 text-foreground transition hover:bg-cream active:bg-cream">Careers</Link>
               </li>
               <li>
-                <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="block rounded-lg px-3 py-3 text-foreground transition hover:bg-cream min-h-[44px] flex items-center">Contact</Link>
+                <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="flex min-h-[44px] items-center rounded-lg px-3 py-3 text-foreground transition hover:bg-cream active:bg-cream">Contact</Link>
               </li>
             </ul>
             <Link

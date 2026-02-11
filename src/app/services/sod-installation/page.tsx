@@ -150,15 +150,15 @@ export default function SodInstallationPage() {
           </p>
         </section>
 
-        {/* Sod types – cards grid */}
+        {/* Sod types – cards grid (match mulch/pinestraw box style) */}
         <section className="mt-8 sm:mt-10 md:mt-14">
-          <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
             {SOD_OPTIONS.map((sod) => (
               <article
                 key={sod.name}
-                className="flex flex-col overflow-hidden rounded-lg border-2 border-accent bg-white"
+                className="overflow-hidden rounded-lg border-2 border-accent bg-white"
               >
-                <div className="relative aspect-[4/3] w-full shrink-0">
+                <div className="relative aspect-[4/3] w-full">
                   <Image
                     src={sod.image}
                     alt={sod.name}
@@ -167,11 +167,13 @@ export default function SodInstallationPage() {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
-                <div className="flex flex-1 flex-col border-t-4 border-accent p-5">
-                  <h3 className="font-heading text-lg font-bold uppercase tracking-tight text-accent">
+                <div className="border-t-2 border-accent px-3 py-2.5 text-center sm:px-4 sm:py-3">
+                  <h3 className="font-heading text-xs font-bold uppercase leading-tight tracking-tight text-foreground sm:text-sm">
                     {sod.name}
                   </h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                </div>
+                <div className="border-t border-border px-3 py-3 sm:px-4 sm:py-4">
+                  <p className="text-sm leading-relaxed text-muted">
                     {sod.description}
                   </p>
                 </div>
