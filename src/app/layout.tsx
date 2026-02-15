@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import "./globals.css";
 // Ensures all gallery assets are part of the build dependency graph for deploy
 import "./gallery-assets";
@@ -44,6 +45,7 @@ export default function RootLayout({
       <body
         className={`${headingFont.variable} ${bodyFont.variable} min-h-full antialiased font-sans overflow-x-hidden`}
       >
+        <GoogleAnalytics />
         <Header />
         <main>{children}</main>
         <Footer />

@@ -27,8 +27,8 @@ export function Footer() {
               <li><Link href="/project-highlights" className="flex min-h-[44px] items-center py-2.5 transition duration-200 hover:text-white">Gallery</Link></li>
               <li><Link href="/testimonials" className="flex min-h-[44px] items-center py-2.5 transition duration-200 hover:text-white">Our Testimonials</Link></li>
               <li><Link href="/contact" className="flex min-h-[44px] items-center py-2.5 transition duration-200 hover:text-white">Contact</Link></li>
-              <li><Link href="/contact" className="flex min-h-[44px] items-center py-2.5 transition duration-200 hover:text-white">Privacy Policy</Link></li>
-              <li><Link href="/contact" className="flex min-h-[44px] items-center py-2.5 transition duration-200 hover:text-white">Terms and Conditions</Link></li>
+              <li><Link href="/privacy" className="flex min-h-[44px] items-center py-2.5 transition duration-200 hover:text-white">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="flex min-h-[44px] items-center py-2.5 transition duration-200 hover:text-white">Terms and Conditions</Link></li>
             </ul>
           </div>
 

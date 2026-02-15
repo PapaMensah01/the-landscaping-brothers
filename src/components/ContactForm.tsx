@@ -1,6 +1,8 @@
 "use client";
 
+import { useActionState } from "react";
 import { useState } from "react";
+import { contactAction } from "@/app/actions/send-email";
 
 const REFERRAL_OPTIONS = [
   "Nextdoor",
@@ -14,13 +16,29 @@ const REFERRAL_OPTIONS = [
 
 export function ContactForm() {
   const [referral, setReferral] = useState("");
+  const [state, formAction, isPending] = useActionState(contactAction, null);
 
   return (
     <form
-      action="#"
+      action={formAction}
       method="post"
       className="mt-10 space-y-6 rounded-2xl border border-border bg-cream/30 p-4 sm:p-6 md:p-8"
+      suppressHydrationWarning
     >
+      {state?.ok === true && (
+        <div className="rounded-lg bg-green-50 p-4 text-sm font-medium text-green-800" role="alert">
+          Thanks! Your message was sent. We&apos;ll get back to you soon.
+        </div>
+      )}
+      {state?.ok === false && (
+        <div className="rounded-lg bg-red-50 p-4 text-sm font-medium text-red-800" role="alert">
+          {state.error}
+        </div>
+      )}
+      <div className="absolute -left-[9999px] top-0 opacity-0" aria-hidden>
+        <label htmlFor="contact-website">Website</label>
+        <input type="text" id="contact-website" name="company_website" tabIndex={-1} autoComplete="off" />
+      </div>
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="firstName" className="block text-sm font-medium text-foreground">
@@ -187,11 +205,10 @@ export function ContactForm() {
             type="checkbox"
             name="marketingEmail"
             value="yes"
-            required
             className="mt-1 h-4 w-4 rounded border-border text-accent focus:ring-accent"
           />
           <span className="text-sm text-foreground">
-            I would like to receive marketing emails from The Landscaping Brothers. Unsubscribe at any time. <span className="text-red-500">*</span>
+            I would like to receive marketing emails from The Landscaping Brothers. Unsubscribe at any time.
           </span>
         </label>
         <label className="flex cursor-pointer items-start gap-3">
@@ -199,19 +216,19 @@ export function ContactForm() {
             type="checkbox"
             name="marketingSms"
             value="yes"
-            required
             className="mt-1 h-4 w-4 rounded border-border text-accent focus:ring-accent"
           />
           <span className="text-sm text-foreground">
-            I also agree to receive marketing SMS from The Landscaping Brothers. Msg &amp; data rates may apply, frequency varies. Reply STOP MKT to opt out of marketing SMS &amp; STOP for all SMS. <span className="text-red-500">*</span>
+            I also agree to receive marketing SMS from The Landscaping Brothers. Msg &amp; data rates may apply, frequency varies. Reply STOP MKT to opt out of marketing SMS &amp; STOP for all SMS.
           </span>
         </label>
       </div>
       <button
         type="submit"
-        className="w-full rounded-full bg-accent px-6 py-4 text-base font-semibold text-white transition hover:bg-accent-dark md:w-auto md:px-8"
+        disabled={isPending}
+        className="w-full rounded-full bg-accent px-6 py-4 text-base font-semibold text-white transition hover:bg-accent-dark disabled:opacity-70 md:w-auto md:px-8"
       >
-        Send message
+        {isPending ? "Sending…" : "Send message"}
       </button>
     </form>
   );

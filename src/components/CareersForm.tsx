@@ -1,6 +1,8 @@
 "use client";
 
+import { useActionState } from "react";
 import { useRef, useState } from "react";
+import { careersAction } from "@/app/actions/send-email";
 
 const HOW_DID_YOU_HEAR_OPTIONS = [
   "Job board (Indeed, LinkedIn, etc.)",
@@ -28,6 +30,7 @@ export function CareersForm() {
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [state, formAction, isPending] = useActionState(careersAction, null);
 
   const setFile = (file: File | null) => {
     setResumeFile(file);
@@ -61,11 +64,26 @@ export function CareersForm() {
 
   return (
     <form
-      action="#"
+      action={formAction}
       method="post"
       encType="multipart/form-data"
       className="mt-10 space-y-6 rounded-2xl border border-border bg-cream/30 p-4 sm:p-6 md:p-8"
+      suppressHydrationWarning
     >
+      {state?.ok === true && (
+        <div className="rounded-lg bg-green-50 p-4 text-sm font-medium text-green-800" role="alert">
+          Application sent. We&apos;ll be in touch soon.
+        </div>
+      )}
+      {state?.ok === false && (
+        <div className="rounded-lg bg-red-50 p-4 text-sm font-medium text-red-800" role="alert">
+          {state.error}
+        </div>
+      )}
+      <div className="absolute -left-[9999px] top-0 opacity-0" aria-hidden>
+        <label htmlFor="careers-website">Website</label>
+        <input type="text" id="careers-website" name="company_website" tabIndex={-1} autoComplete="off" />
+      </div>
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="careers-firstName" className={labelClassName}>
@@ -250,9 +268,10 @@ export function CareersForm() {
 
       <button
         type="submit"
-        className="w-full rounded-full bg-accent px-6 py-4 text-base font-semibold text-white transition hover:bg-accent-dark md:w-auto md:px-8"
+        disabled={isPending}
+        className="w-full rounded-full bg-accent px-6 py-4 text-base font-semibold text-white transition hover:bg-accent-dark disabled:opacity-70 md:w-auto md:px-8"
       >
-        Submit application
+        {isPending ? "Submitting…" : "Submit application"}
       </button>
     </form>
   );
